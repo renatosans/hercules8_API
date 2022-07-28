@@ -10,27 +10,12 @@ const app = express();
 app.use("/", express.static('./Public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
+
 // setHeader('Access-Control-Allow-Origin', '*')
-// setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE')
-// setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
 app.use(cors())
+
 // createRouter(app, { directory: apiDirectory, additionalMethods: null } )
 app.use(nextApi({ base: '/api', directory: 'api', options: {caseSensitive: false} }))
 
-
 // inicia a API escutando na porta 3000
 app.listen(port, () => console.log('Express escutando chamadas na porta ' + port));
-
-/*
-app.get('/recuperarJogador/:id', (req, res) => {
-    prisma.jogador.findUnique({ where: { id: Number(req.params.id) } })
-    .then((jogador) => res.send(jogador))
-    .catch((error) => res.send("Error: " + error.message))
-})
-
-app.get('/recuperarClube/:id', (req, res) => {
-    prisma.clube.findUnique({ where: { id: Number(req.params.id) }, include: { jogadores: true } })
-    .then((clube) => res.send(clube))
-    .catch((error) => res.send("Error: " + error.message))
-})
-*/
