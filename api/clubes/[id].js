@@ -4,7 +4,7 @@ const prisma = require('../../config/db');
 function getClube(req, res) {
 	const { id } = req.params || req.query;
 
-	prisma.clube.findUnique({ where: { id: Number(id) }, include: { jogadores: true } })
+	prisma.clube.findUnique({ where: { id: Number(id) } })
 	.then((clube) => res.send(clube))
 	.catch((error) => res.send("Error: " + error.message))
 }

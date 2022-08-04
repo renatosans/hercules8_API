@@ -2,11 +2,11 @@ const { PrismaClient } = require('@prisma/client');
 
 
 // dados da conexão com BD serverless
-const host     = 'r0e93010lf0s.us-east-3.psdb.cloud';
-const username = Buffer.from('NmxxMGczNDA5enRv', 'base64').toString('ascii');
-const password = Buffer.from('cHNjYWxlX3B3X1JLbFN4QlVyQ1YxT0x1eVFxYjlqTVhjaGFjbE9fWW5QaWc2SWNBb3VWaGc=', 'base64').toString('ascii');
+const host     = 'a8ccryk3vedz.aws-sa-east-1-1.psdb.cloud';
+const username = Buffer.from('MG51dTk5MXo4M2c2', 'base64').toString('ascii');
+const password = Buffer.from('cHNjYWxlX3B3X0hzV29CN1JYNzNPYnhncnF5bjRqblJ5ZTNEVXhodkgyQ2NKdllSOHpMU1E=', 'base64').toString('ascii');
 const port     = 3306
-const database = 'hercules8'
+const database = 'h8'
 const ssl      = true
 const setSSL   = 'sslaccept=strict&sslmode=require'
 
