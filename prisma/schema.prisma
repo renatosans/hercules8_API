@@ -8,17 +8,17 @@ datasource db {
 }
 
 model clube {
-  id        Int       @id
-  pais      String    @db.VarChar(45)
-  nome      String    @db.VarChar(35)
-  email     String?   @db.VarChar(35)
-  telefone  String?   @db.VarChar(15)
-  fax       String?   @db.VarChar(15)
-  imagem    String?   @db.VarChar(200)
+  id       Int     @id @default(autoincrement())
+  pais     String  @db.VarChar(45)
+  nome     String  @db.VarChar(35)
+  email    String? @db.VarChar(35)
+  telefone String? @db.VarChar(15)
+  fax      String? @db.VarChar(15)
+  imagem   String? @db.VarChar(200)
 }
 
 model jogador {
-  id      Int    @id
+  id      Int    @id @default(autoincrement())
   clubeId Int
   nome    String @db.VarChar(150)
   email   String @db.VarChar(200)
